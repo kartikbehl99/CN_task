@@ -1,8 +1,8 @@
 ---
 :mailboxes:
   -
-    :email: "kartikbehl99@gmail.com"
-    :password: "ozsxbwvyjaoruuxv"
+    :email: "your_email"
+    :password: "your_password"
     :name: "inbox"
     :delivery_method: postback
     :content_type: text/html
