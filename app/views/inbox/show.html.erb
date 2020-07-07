@@ -1,0 +1,43 @@
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <center><h1 class="display-4">INBOX</h1></center>
+    </div>
+</div>
+
+<div class="list-group">
+    <% if !@email.nil? %>
+        <% @email.each do |e| %>
+            <% if !e.nil? %>
+            <div class="list-group-item">
+                <a href="" class="list-group-item-action email">
+                    <span><strong><%= e.from %></strong></span>
+                    <span><strong>Subject: <%= e.subject %></strong></span>
+                    <span style="position: relative; left: 5%">(<%= e.status %>)</span>
+                    <span style="display:None" class="message_id"><%= e.message_id %></span>
+                </a>
+                <% if session[:user]["admin"] == 1 %>
+
+                    <span style="float:right" class="btn-group">
+
+                        <button type="button" id="dropdownMenuLink" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Assign
+                        </button>
+
+                        <div class="dropdown-menu" style="position: relative; right: 10%">
+                            <%= form_for :user do |f| %>
+                                <% User.all.to_a.each do |user| %>
+                                    <% if session[:user]["username"] != user.username %>
+                                        <a class="dropdown-item usernames"><%= user.username %></a>
+                                    <% end %>
+                                <% end %>
+                            <% end %>
+                        </div>
+
+                    </span>
+
+                <% end %>
+            </div>
+            <% end %>
+        <% end %>
+    <% end %>
+</div>
