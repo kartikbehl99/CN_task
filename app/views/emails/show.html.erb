@@ -1,5 +1,6 @@
 <div style="height:100%; display:flex; justify-content:center;">
     <div class="card" style="width: 80%; margin-top: 10px; margin-bottom: 10px; height: fit-content">
+        <% if !@email.nil? %>
             <h5 class="card-header" id="from-email">From: <%= @email[:from] %></h5>
             <div class="card-body">
                 <h5 class="card-title">Subject: <%= @email[:subject] %></h5>
@@ -8,5 +9,6 @@
                 <% end %> 
                 <a href="" class="btn btn-primary" id="reply">Reply</a>
             </div>
+        <% end %>
     </div>
 </div>
