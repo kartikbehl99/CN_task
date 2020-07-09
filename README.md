@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Steps to get the project running.
 
-Things you may want to cover:
+* Open terminal in the project directory and run bindle install.
 
-* Ruby version
+* Modify the mail_room_config.yml to include your gmail username and password.
 
-* System dependencies
+* Open the config/environments/production.rb and config/environments/development.rb and change the Gmail smtp setting to include your gmail username and password.
 
-* Configuration
+* Start the mail_room server by running: "mail_room -c ./mail_room_config.yml".
 
-* Database creation
+* Open up other terminal in the project directory and start the rails server by running "rails s".
 
-* Database initialization
+* OPen the browser and go to "http://localhost:3000". This is where the welcome screen will appear.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* The mail_room server will forward all the incoming emails from gmail to the rails server.
